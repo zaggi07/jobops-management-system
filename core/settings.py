@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'drf_spectacular',
     'jobops',
 ]
 
@@ -116,6 +117,7 @@ AUTH_USER_MODEL = 'jobops.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
@@ -145,4 +147,13 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'jobops.tasks.cleanup_old_change_history',
         'schedule': 604800.0,
     },
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'JobOps - Internal Operations Management API',
+    'DESCRIPTION': 'REST API for managing internal operations with role-based access control, job lifecycle management, and equipment tracking.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SCHEMA_PATH_PREFIX': r'/api',
 }

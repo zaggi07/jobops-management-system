@@ -50,14 +50,33 @@ Server runs at: **http://localhost:8000**
 
 ## Testing the API
 
-### Get JWT Token
+### Option 1: Swagger UI (Interactive)
+```
+http://localhost:8000/api/docs/
+```
+- Interactive API documentation
+- Test endpoints directly in browser
+- Authenticate with JWT token
+- See request/response examples
+
+### Option 2: ReDoc (Clean Documentation)
+```
+http://localhost:8000/api/redoc/
+```
+- Clean, readable API documentation
+- All endpoints with descriptions
+- Request/response schemas
+
+### Option 3: cURL/Manual Testing
+
+#### Get JWT Token
 ```bash
 curl -X POST http://localhost:8000/auth/login/ \
   -H "Content-Type: application/json" \
   -d '{"username":"admin","password":"admin123"}'
 ```
 
-### Use Token in Requests
+#### Use Token in Requests
 ```bash
 curl http://localhost:8000/api/jobs/ \
   -H "Authorization: JWT YOUR_ACCESS_TOKEN"
@@ -65,7 +84,9 @@ curl http://localhost:8000/api/jobs/ \
 
 ## API Documentation
 
-See **API_TESTING_GUIDE.md** for complete endpoint documentation with examples.
+- **Swagger UI:** http://localhost:8000/api/docs/ (Interactive)
+- **ReDoc:** http://localhost:8000/api/redoc/ (Clean docs)
+- **API Testing Guide:** See **API_TESTING_GUIDE.md** for complete examples
 
 ## Project Structure
 
