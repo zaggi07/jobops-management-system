@@ -1,0 +1,456 @@
+[
+{
+  "model": "jobops.user",
+  "pk": 1,
+  "fields": {
+    "username": "admin",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_superuser": true,
+    "is_active": true,
+    "date_joined": "2025-10-18T10:00:00Z",
+    "role": "admin",
+    "created_at": "2025-10-18T10:00:00Z",
+    "updated_at": "2025-10-18T10:00:00Z"
+  }
+},
+{
+  "model": "jobops.user",
+  "pk": 2,
+  "fields": {
+    "username": "tech1",
+    "email": "tech1@example.com",
+    "is_staff": false,
+    "is_superuser": false,
+    "is_active": true,
+    "date_joined": "2025-10-18T10:05:00Z",
+    "role": "technician",
+    "created_at": "2025-10-18T10:05:00Z",
+    "updated_at": "2025-10-18T10:05:00Z"
+  }
+},
+{
+  "model": "jobops.user",
+  "pk": 3,
+  "fields": {
+    "username": "tech2",
+    "email": "tech2@example.com",
+    "is_staff": false,
+    "is_superuser": false,
+    "is_active": true,
+    "date_joined": "2025-10-18T10:06:00Z",
+    "role": "technician",
+    "created_at": "2025-10-18T10:06:00Z",
+    "updated_at": "2025-10-18T10:06:00Z"
+  }
+},
+{
+  "model": "jobops.user",
+  "pk": 4,
+  "fields": {
+    "username": "sales1",
+    "email": "sales1@example.com",
+    "is_staff": false,
+    "is_superuser": false,
+    "is_active": true,
+    "date_joined": "2025-10-18T10:07:00Z",
+    "role": "sales_agent",
+    "created_at": "2025-10-18T10:07:00Z",
+    "updated_at": "2025-10-18T10:07:00Z"
+  }
+},
+{
+  "model": "jobops.equipment",
+  "pk": 1,
+  "fields": {
+    "name": "Power Drill Pro",
+    "type": "tool",
+    "serial_number": "PD-2024-001",
+    "is_active": true,
+    "created_at": "2025-10-18T11:00:00Z",
+    "updated_at": "2025-10-18T11:00:00Z"
+  }
+},
+{
+  "model": "jobops.equipment",
+  "pk": 2,
+  "fields": {
+    "name": "Laser Level",
+    "type": "device",
+    "serial_number": "LL-2024-001",
+    "is_active": true,
+    "created_at": "2025-10-18T11:05:00Z",
+    "updated_at": "2025-10-18T11:05:00Z"
+  }
+},
+{
+  "model": "jobops.equipment",
+  "pk": 3,
+  "fields": {
+    "name": "Service Van",
+    "type": "vehicle",
+    "serial_number": "VAN-2024-001",
+    "is_active": true,
+    "created_at": "2025-10-18T11:10:00Z",
+    "updated_at": "2025-10-18T11:10:00Z"
+  }
+},
+{
+  "model": "jobops.equipment",
+  "pk": 4,
+  "fields": {
+    "name": "Excavator JCB",
+    "type": "machine",
+    "serial_number": "EXC-2024-001",
+    "is_active": true,
+    "created_at": "2025-10-18T11:15:00Z",
+    "updated_at": "2025-10-18T11:15:00Z"
+  }
+},
+{
+  "model": "jobops.equipment",
+  "pk": 5,
+  "fields": {
+    "name": "Welding Machine",
+    "type": "machine",
+    "serial_number": "WM-2024-001",
+    "is_active": true,
+    "created_at": "2025-10-18T11:20:00Z",
+    "updated_at": "2025-10-18T11:20:00Z"
+  }
+},
+{
+  "model": "jobops.job",
+  "pk": 1,
+  "fields": {
+    "title": "Security System Installation at ABC Corp",
+    "description": "Complete security camera installation with 8 cameras and alarm system integration",
+    "client_name": "ABC Corporation",
+    "created_by": 4,
+    "assigned_to": 2,
+    "status": "in_progress",
+    "priority": "high",
+    "scheduled_date": "2025-10-20T09:00:00Z",
+    "overdue": false,
+    "created_at": "2025-10-18T12:00:00Z",
+    "updated_at": "2025-10-18T13:00:00Z"
+  }
+},
+{
+  "model": "jobops.job",
+  "pk": 2,
+  "fields": {
+    "title": "Network Infrastructure Setup",
+    "description": "Setup complete network infrastructure including routers, switches, and cabling for new office",
+    "client_name": "XYZ Technologies",
+    "created_by": 4,
+    "assigned_to": 3,
+    "status": "pending",
+    "priority": "medium",
+    "scheduled_date": "2025-10-21T10:00:00Z",
+    "overdue": false,
+    "created_at": "2025-10-18T12:30:00Z",
+    "updated_at": "2025-10-18T12:30:00Z"
+  }
+},
+{
+  "model": "jobops.job",
+  "pk": 3,
+  "fields": {
+    "title": "Emergency Repair - Power Outage",
+    "description": "Fix electrical system causing power outages in main building",
+    "client_name": "DEF Industries",
+    "created_by": 1,
+    "assigned_to": 2,
+    "status": "completed",
+    "priority": "urgent",
+    "scheduled_date": "2025-10-19T08:00:00Z",
+    "overdue": false,
+    "created_at": "2025-10-18T08:00:00Z",
+    "updated_at": "2025-10-18T16:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 1,
+  "fields": {
+    "job": 1,
+    "title": "Install Security Cameras",
+    "description": "Install 8 security cameras in designated locations throughout the building",
+    "step": "installation",
+    "order": 1,
+    "status": "in_progress",
+    "completed_at": null,
+    "created_at": "2025-10-18T12:10:00Z",
+    "updated_at": "2025-10-18T13:00:00Z",
+    "required_equipment": [1, 2]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 2,
+  "fields": {
+    "job": 1,
+    "title": "Setup Alarm System",
+    "description": "Configure and test alarm system with motion sensors and door contacts",
+    "step": "configuration",
+    "order": 2,
+    "status": "pending",
+    "completed_at": null,
+    "created_at": "2025-10-18T12:15:00Z",
+    "updated_at": "2025-10-18T12:15:00Z",
+    "required_equipment": [1]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 3,
+  "fields": {
+    "job": 1,
+    "title": "System Testing and Client Training",
+    "description": "Complete system testing and train client staff on system usage",
+    "step": "testing",
+    "order": 3,
+    "status": "pending",
+    "completed_at": null,
+    "created_at": "2025-10-18T12:20:00Z",
+    "updated_at": "2025-10-18T12:20:00Z",
+    "required_equipment": []
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 4,
+  "fields": {
+    "job": 2,
+    "title": "Install Network Routers",
+    "description": "Install and configure primary and backup routers",
+    "step": "installation",
+    "order": 1,
+    "status": "pending",
+    "completed_at": null,
+    "created_at": "2025-10-18T12:35:00Z",
+    "updated_at": "2025-10-18T12:35:00Z",
+    "required_equipment": [2]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 5,
+  "fields": {
+    "job": 2,
+    "title": "Cable Infrastructure",
+    "description": "Run and organize network cables throughout the office",
+    "step": "installation",
+    "order": 2,
+    "status": "pending",
+    "completed_at": null,
+    "created_at": "2025-10-18T12:40:00Z",
+    "updated_at": "2025-10-18T12:40:00Z",
+    "required_equipment": [1]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 6,
+  "fields": {
+    "job": 3,
+    "title": "Diagnose Electrical Issue",
+    "description": "Identify the source of power outages in electrical system",
+    "step": "inspection",
+    "order": 1,
+    "status": "completed",
+    "completed_at": "2025-10-18T10:00:00Z",
+    "created_at": "2025-10-18T08:15:00Z",
+    "updated_at": "2025-10-18T10:00:00Z",
+    "required_equipment": [2]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 7,
+  "fields": {
+    "job": 3,
+    "title": "Replace Faulty Equipment",
+    "description": "Replace damaged circuit breakers and wiring",
+    "step": "repair",
+    "order": 2,
+    "status": "completed",
+    "completed_at": "2025-10-18T14:00:00Z",
+    "created_at": "2025-10-18T10:05:00Z",
+    "updated_at": "2025-10-18T14:00:00Z",
+    "required_equipment": [1, 5]
+  }
+},
+{
+  "model": "jobops.jobtask",
+  "pk": 8,
+  "fields": {
+    "job": 3,
+    "title": "System Testing and Verification",
+    "description": "Test electrical system and verify no further issues",
+    "step": "testing",
+    "order": 3,
+    "status": "completed",
+    "completed_at": "2025-10-18T16:00:00Z",
+    "created_at": "2025-10-18T14:05:00Z",
+    "updated_at": "2025-10-18T16:00:00Z",
+    "required_equipment": [2]
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 1,
+  "fields": {
+    "job": 1,
+    "task": null,
+    "action": "created",
+    "changed_by": 4,
+    "old_value": null,
+    "new_value": {
+      "title": "Security System Installation at ABC Corp",
+      "status": "pending",
+      "priority": "high",
+      "client_name": "ABC Corporation"
+    },
+    "timestamp": "2025-10-18T12:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 2,
+  "fields": {
+    "job": 1,
+    "task": 1,
+    "action": "created",
+    "changed_by": 4,
+    "old_value": null,
+    "new_value": {
+      "title": "Install Security Cameras",
+      "status": "pending"
+    },
+    "timestamp": "2025-10-18T12:10:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 3,
+  "fields": {
+    "job": 1,
+    "task": 1,
+    "action": "status_changed",
+    "changed_by": 2,
+    "old_value": {
+      "status": "pending"
+    },
+    "new_value": {
+      "status": "in_progress"
+    },
+    "timestamp": "2025-10-18T13:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 4,
+  "fields": {
+    "job": 2,
+    "task": null,
+    "action": "created",
+    "changed_by": 4,
+    "old_value": null,
+    "new_value": {
+      "title": "Network Infrastructure Setup",
+      "status": "pending",
+      "priority": "medium",
+      "client_name": "XYZ Technologies"
+    },
+    "timestamp": "2025-10-18T12:30:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 5,
+  "fields": {
+    "job": 3,
+    "task": null,
+    "action": "created",
+    "changed_by": 1,
+    "old_value": null,
+    "new_value": {
+      "title": "Emergency Repair - Power Outage",
+      "status": "pending",
+      "priority": "urgent",
+      "client_name": "DEF Industries"
+    },
+    "timestamp": "2025-10-18T08:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 6,
+  "fields": {
+    "job": 3,
+    "task": 6,
+    "action": "completed",
+    "changed_by": 2,
+    "old_value": {
+      "status": "in_progress"
+    },
+    "new_value": {
+      "status": "completed"
+    },
+    "timestamp": "2025-10-18T10:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 7,
+  "fields": {
+    "job": 3,
+    "task": 7,
+    "action": "completed",
+    "changed_by": 2,
+    "old_value": {
+      "status": "in_progress"
+    },
+    "new_value": {
+      "status": "completed"
+    },
+    "timestamp": "2025-10-18T14:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 8,
+  "fields": {
+    "job": 3,
+    "task": 8,
+    "action": "completed",
+    "changed_by": 2,
+    "old_value": {
+      "status": "in_progress"
+    },
+    "new_value": {
+      "status": "completed"
+    },
+    "timestamp": "2025-10-18T16:00:00Z"
+  }
+},
+{
+  "model": "jobops.jobchangehistory",
+  "pk": 9,
+  "fields": {
+    "job": 3,
+    "task": null,
+    "action": "status_changed",
+    "changed_by": 2,
+    "old_value": {
+      "status": "in_progress"
+    },
+    "new_value": {
+      "status": "completed"
+    },
+    "timestamp": "2025-10-18T16:00:00Z"
+  }
+}
+]
